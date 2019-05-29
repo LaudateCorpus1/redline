@@ -1,0 +1,15 @@
+language: java
+sudo: false
+script:
+- mvn install
+deploy:
+  provider: releases
+  api_key:
+    secure: R2XRHqViXYtlNM15TXRIaszP9ireESpLalFVOM7yoee+pXNs2vtyZuJ/Cp5DTVO3Iz3GpWsHjE0/5UmDr3MjXiMUaWxSSs3fdloDd45+38r3f+Bc2qjY7xPpzBOdUjC3wLp8OhrY9Gcr4l35hjVyOAreNchcs1Zu0udXdRtYPlD9+xdg/3umpEEBKbSvsvB1z+dkhfjp5vo9hcta2KipbA3Cvl2Lhk8BsaC+YYK2V59o12fHi9AEkKqAN4Tki1Hqy5c08+A0egiGX4J1dQVCIAqj26N8FREchUrhuBmOaDkZkxBJ2G81EerHpVxRfBnKvXyv0G49FnAouc4nJaQ8SMfO4O4OJsCBYzBaqPOWvAupWOAdMYY7yzprUVvHDGy43T4Ho4VL2Ci5CemIa4KS1RSePukgC2JF+6VdNxRK9p+6L6N6t50TcWjNRLRYwlUZtAfesGkPwmiX2mv9McHwDWhvKO8+ygUktBQCj3EJmWo4X7hc3Nd3KcmV7C+EgiPedLfDPYduuEBBmo6m6wrqaHm+VR98xe660DI9Yur4kLeTrasKuT0X1BVoHgWMInmA9CgaADfxDCX1V5updgopsRwYNS0g3vpcQMq4ZWEtcSp1btE2kUFoWjeFjbrjQqGtnE+HhqOCzCCssG/i5DkYQpnLsvSERV8XHUDH2AtOHSg=
+  file:
+    - target/redline-1.2.8.jar
+    - target/redline-1.2.8-sources.jar
+  skip_cleanup: true
+  on:
+    repo: corretto/redline
+    tags: true
